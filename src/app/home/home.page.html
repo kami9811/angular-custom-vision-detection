@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <label for="file-button" id="file-button-label">日誌の写真を選択</label>
+    <input type="file" accept="image/*" id="file-button" (change)="loadPicture($event)"/>
+  </div>
+
+  <div *ngIf="imageFlag">
+    <ion-img [src]="image" id="image"></ion-img>
+  </div>
+
+  <ion-button id="post-article-button" class="ion-padding" expand="block" color="primary" (click)="detect()">Custom Visionに判定させる</ion-button>
+
+  <div id="canvas-container">
+    <canvas id="canvas"></canvas>
+  </div>
+</ion-content>
